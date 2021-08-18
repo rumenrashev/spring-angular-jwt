@@ -1,8 +1,6 @@
 package spring.app.auth.data.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
@@ -10,6 +8,7 @@ import java.util.Objects;
 public class AuthorityEntity extends BaseEntity {
 
     @Column(nullable = false,unique = true)
+    @Enumerated(EnumType.STRING)
     private AuthorityEnum authority;
 
     public AuthorityEntity() { }
